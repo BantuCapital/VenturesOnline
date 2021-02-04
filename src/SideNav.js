@@ -1,6 +1,6 @@
 import React from 'react'
 import MuiListItem from '@material-ui/core/ListItem'
-import { List, ListItemText, Card, CardMedia, CardActionArea} from '@material-ui/core'
+import { List, ListItemText, Card, CardMedia, Box, Typography} from '@material-ui/core'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
 import Logo from './Images/Logo.png'
 
@@ -15,13 +15,17 @@ const useStyles = makeStyles(theme =>({
         width: "98%",
         border:"none",
         marginTop: "50px",
-        marginBottom: "20px",
+        marginBottom: "40px",
         boxShadow: "none"
     },
 
     media:{
       width: "100%",
       border: "none"
+    },
+    
+    listItemText:{
+      fontSize: "50px"
     }
 
 }));
@@ -61,9 +65,14 @@ function Sidebar({ items }) {
                 />
         </Card>
         <List disablePadding dense>
-          {items.map(({ label, name, ...rest }) => (
+          {items.map(({ label, name, icon, ...rest }) => (
             <ListItem key={name} button {...rest} className={classes.root}>
-              <ListItemText>{label}</ListItemText>
+              <Box pl={4.5} >
+                { icon }
+              </Box>
+              <Box mx='auto' width = '10'>
+                <ListItemText> <Typography> {label} </Typography></ListItemText>
+              </Box>  
             </ListItem>
           ))}
         </List>
