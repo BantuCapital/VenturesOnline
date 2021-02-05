@@ -157,7 +157,7 @@ const MenuItems = withStyles({
     }
 })(MenuItem);
 
-function SideNav(props) {
+function ResponsiveDrawer(props) {
   const { window } = props;
   const classes = useStyles();
   const theme = useTheme();
@@ -307,7 +307,7 @@ function SideNav(props) {
   );
 }
 
-SideNav.propTypes = {
+ResponsiveDrawer.propTypes = {
   /**
    * Injected by the documentation to work in an iframe.
    * You won't need it on your project.
@@ -315,4 +315,4 @@ SideNav.propTypes = {
   window: PropTypes.func,
 };
 
-export default SideNav;
+export default ResponsiveDrawer;

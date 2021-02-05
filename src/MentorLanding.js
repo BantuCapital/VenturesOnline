@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
 import classNames from 'classnames';
-import SideBar from './SideNav';
+import SideNav from './SideNav';
 import { Home, Business, MeetingRoom, LocalLibrary, Group } from '@material-ui/icons';
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+
 
 
 const theme = createMuiTheme({
@@ -50,7 +51,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className={bgClass}>
-        <SideBar items={MenuItems}/>
+        <SideNav items={MenuItems} user="Tom"/>
       </div>
     </ThemeProvider>
   );
