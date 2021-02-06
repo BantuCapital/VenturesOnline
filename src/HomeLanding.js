@@ -28,20 +28,55 @@ const MenuItems = [
     
   },
   {
-    name: 'meetings',
-    label: 'Meetings',
+    name: 'startup',
+    label: 'Start Up',
     icon: <MeetingRoom/>,
    
   },
   {
-    name: 'learning content',
-    label: 'Learning Content',
+    name: 'accelerate',
+    label: 'Accelerate',
     icon: <LocalLibrary/>,
     
   },
   {
-    name: 'ecosystem centre',
-    label: 'Ecosystem Centre',
+    name: 'community',
+    label: 'Community',
+    icon: <Group/>
+  },
+  {
+    name: 'chat',
+    label: 'Chat',
+    icon: <Group/>
+  },
+  {
+    name: 'my tasks',
+    label: 'My Tasks',
+    icon: <Group/>
+  },
+  {
+    name: 'content centre',
+    label: 'Content Centre',
+    icon: <Group/>
+  },
+  {
+    name: 'service providers',
+    label: 'Service Providers',
+    icon: <Group/>
+  },
+  {
+    name: 'coaching',
+    label: 'Coaching',
+    icon: <Group/>
+  },
+  {
+    name: 'dealflow',
+    label: 'DealFlow',
+    icon: <Group/>
+  },
+  {
+    name: 'events',
+    label: 'Events',
     icon: <Group/>
   }
 ]
