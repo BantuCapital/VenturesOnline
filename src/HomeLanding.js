@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import SideNav from './SideNav';
 import { Home, Business, MeetingRoom, LocalLibrary, Group } from '@material-ui/icons';
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import SpacingGrid from './Containers';
 
 
 
@@ -87,6 +88,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className={bgClass}>
         <SideNav items={MenuItems} user="Tom"/>
+        <SpacingGrid/>
       </div>
     </ThemeProvider>
   );
