@@ -98,10 +98,6 @@ mainProfileBox: {
     marginRight: -12,
     alignItems: "center"
 },
-avatarButton: {
-    
-},
-
 dropdown: {
     position: 'absolute',
     top: 28,
@@ -192,18 +188,18 @@ function SideNav(props) {
                   title = "Ventures Online Logo"
               />
       </Card>
-      <List disablePadding dense>
+      <MenuList>
         {props.items.map((item) => (
-          <ListItem key={item.name} button  className={classes.root}>
+          <MenuItems key={item.name} >
             <Box pl={3} >
               { item.icon }
             </Box>
             <Box mx='auto' width = '10'>
               <ListItemText> <Typography> {item.label} </Typography></ListItemText>
             </Box>  
-          </ListItem>
+          </MenuItems>
         ))}
-      </List>
+      </MenuList>
     </div>
    );
 
