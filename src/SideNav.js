@@ -5,17 +5,15 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
-import List from '@material-ui/core/List';
 import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme, withStyles } from '@material-ui/core/styles';
-import { Card, CardMedia, Box, Avatar, Button, useMediaQuery, ClickAwayListener, Popper,MenuList, MenuItem, Paper } from '@material-ui/core';
+import { Card, CardMedia, Box, Avatar, Button, useMediaQuery, ClickAwayListener, Popper,MenuList, MenuItem, Paper, useScrollTrigger } from '@material-ui/core';
 import Logo from './Images/Logo.png';
-import MuiListItem from '@material-ui/core/ListItem';
 import Abe from './Images/Abe-Cambridge.jpg';
-
+import BackgroundImage from './Images/Background2.png';
 
 const drawerWidth = 240;
 
@@ -30,6 +28,12 @@ const useStyles = makeStyles((theme) => ({
       width: drawerWidth,
       flexShrink: 0,
     },
+  },
+  sidedrawer:{
+    height: '100vh',
+    width: '250px',
+    backgroundColor: 'white',
+
   },
   appBar: {
     backgroundColor: 'transparent',
@@ -111,26 +115,6 @@ dropdown: {
 
 }));
 
-const ListItem = withStyles({
-    root: {
-        "&$selected":{
-            backgroundColor: "#FA3900",
-            color: "white",
-            opacity: 1,
-        },
-        "&$selected:hover":{
-            backgroundColor: "#FA3900",
-            color: "white",
-            opacity: 1,
-        },
-        "&:hover":{
-            backgroundColor: "#FA3900",
-            color: "white",
-            opacity: 1,
-        },
-        selected: {}
-    }
-})(MuiListItem);
 
 const MenuItems = withStyles({
     root: {
@@ -161,6 +145,7 @@ function SideNav(props) {
   const [profileOpen, setProfileOpen] = React.useState(false);
   const anchorRef = React.useRef();
   const isBreakPoint = useMediaQuery(theme.breakpoints.up('sm'));
+  
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -177,8 +162,14 @@ function SideNav(props) {
   const open = Boolean(profileOpen);
   const id = open ? "popover menu" : undefined;
 
+  const trigger = useScrollTrigger({
+    target: window ? window(): undefined,
+    disableHysteresis: true,
+    threshold: 0,
+  });
+
   const drawer = (
-    <div className='sidebar'>
+    <div className={classes.sidedrawer}>
       <Card className={classes.card}>
               <CardMedia
                   component="img"
@@ -208,7 +199,9 @@ function SideNav(props) {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
+      <AppBar position="fixed" className={classes.appBar} 
+        style={{backgroundImage: trigger ? `url(${BackgroundImage})`: 'none', backgroundPosition: 'right' }}
+      >
         <Toolbar style={{height:"80px"}}>
           <IconButton
             aria-label="open drawer"

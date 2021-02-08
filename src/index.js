@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './MentorLanding';
+import MentorLanding from './MentorLanding';
 import reportWebVitals from './reportWebVitals';
+
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <MentorLanding />
   </React.StrictMode>,
   document.getElementById('root')
 );
