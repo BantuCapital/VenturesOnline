@@ -227,7 +227,7 @@ function SideNav(props) {
                 <Box className={classes.nameProfilebox} >
                     <Typography style={{color: "black"}}> Hi {props.user} </Typography>
                     <Box display='flex'>
-                        <Button className={classes.clickable} size="small" >Profile</Button>
+                        <Button className={classes.clickable} size="small">Profile</Button>
                         <Typography style={{fontSize: "12px", paddingTop:"4px", color:"black"}}>|</Typography>
                         <Button className={classes.clickable} size="small">Sign Out</Button>
                     </Box>

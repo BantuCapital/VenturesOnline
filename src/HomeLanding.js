@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
 import classNames from 'classnames';
+import { Link } from "react-router-dom"
 import SideNav from './SideNav';
 import { Home, Business, MeetingRoom, LocalLibrary, Group } from '@material-ui/icons';
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import SpacingGrid from './Containers';
-
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import BusinessProfile from './BusinessProfile';
+import FullWidthGrid from './HomeContainers';
 
 
 const theme = createMuiTheme({
@@ -19,7 +21,7 @@ const theme = createMuiTheme({
 const MenuItems = [
   { 
     name: 'home', 
-    label: 'Home',
+    label: <Link to="businessprofile">Home</Link>,
     icon: <Home/>,
   },
   {
@@ -30,7 +32,7 @@ const MenuItems = [
   },
   {
     name: 'startup',
-    label: 'Start Up',
+    label: <Link to="learningcontent">Start up</Link>,
     icon: <MeetingRoom/>,
    
   },
@@ -57,7 +59,7 @@ const MenuItems = [
   },
   {
     name: 'content centre',
-    label: 'Content Centre',
+    label:'Content Centre',
     icon: <Group/>
   },
   {
@@ -85,12 +87,26 @@ const MenuItems = [
 function App() {
   const bgClass = classNames('mainContainer', 'mainOverlay')
   return (
-    <ThemeProvider theme={theme}>
-      <div className={bgClass}>
-        <SideNav items={MenuItems} user="Tom"/>
-        <SpacingGrid/>
-      </div>
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider theme={theme}>
+        <div className={bgClass}>
+          <SideNav items={MenuItems} user="Tom"/>
+          <div className="navigation">
+            <Switch>
+                <Route exact path="/">
+                  <FullWidthGrid/>
+                </Route>
+                <Route path="/businessprofile">
+                  <BusinessProfile/>
+                </Route>
+                <Route path="/learningcontent">
+                  <LearningContent/>
+                </Route>
+              </Switch>
+          </div>
+        </div>
+      </ThemeProvider>
+    </Router>  
   );
 }
 
