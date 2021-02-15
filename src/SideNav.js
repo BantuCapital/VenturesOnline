@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
+      
     },
   },
   menuButton: {
@@ -133,6 +134,12 @@ const MenuItems = withStyles({
             color: "white",
             opacity: 1,
         },
+        "&:focus":{
+          backgroundColor: "#FA3900",
+          color: 'white',
+          opacity: 1,
+        },
+
         selected: {}
     }
 })(MenuItem);

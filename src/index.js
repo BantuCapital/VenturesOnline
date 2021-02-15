@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import MentorLanding from './MentorLanding';
+import MentorFillOutProfile from './MentorView/MentorFillOutProfile'
+//import MentorProfile from './MentorView/MentorProfile'
+//import MentorLanding from './MentorView/MentorLanding';
+//import ManagerLanding from './ManagerView/ManagerLanding'
 import reportWebVitals from './reportWebVitals';
 
 
 
 ReactDOM.render(
   <React.StrictMode>
-      <MentorLanding />
+      <MentorFillOutProfile />
   </React.StrictMode>,
   document.getElementById('root')
 );
