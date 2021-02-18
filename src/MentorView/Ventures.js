@@ -1,7 +1,7 @@
 import React from 'react';
 import SideNav from '../SideNav';
-import { Card, CardHeader, CardMedia, CardContent, Grid, Typography, Avatar } from '@material-ui/core'
-import { Home, Business, MeetingRoom, LocalLibrary, Group, Event, EventOutlined, StarBorderOutlined, BusinessOutlined } from '@material-ui/icons';
+import { Card, CardHeader, CardMedia, CardContent, Grid, Typography, Avatar, IconButton, Link } from '@material-ui/core'
+import { Home, Business, MeetingRoom, LocalLibrary, Group, ExpandLess, ExpandMore } from '@material-ui/icons';
 import { ThemeProvider, createMuiTheme, makeStyles } from "@material-ui/core/styles";
 import BackgroundImage from '../Images/Background2.png';
 
@@ -24,7 +24,10 @@ const useStyles = makeStyles((theme)=>({
         }
     },
     card: {
-      height: '500px',
+      BackgroundColor: 'white',
+      maxHeight: '150px',
+      width: '100%',
+      marginBottom: '10px'
     },
 
     Background: {
@@ -36,7 +39,7 @@ const useStyles = makeStyles((theme)=>({
       [theme.breakpoints.up('sm')]:{
         height: '100vh',  
       },
-      [theme.breakpoints.down('sm')]:{
+      [theme.breakpoints.down('xs')]:{
         height: '100%',
       }
     },
@@ -85,7 +88,96 @@ function Ventures() {
         <div className={classes.Background}>
           <SideNav items={MenuItems} user="Tom"/>
           <div className={classes.root}>
-           
+            <Card className={classes.card} >
+              <CardHeader
+                avatar={
+                  <Avatar>
+                    
+                  </Avatar>
+                }
+                title={
+                  <Typography>
+                    Business Name Prop Goes here.
+                  </Typography>
+                }
+                subheader={
+                  <Typography variant='subtitle'
+                    style={{
+                      color: "#FA3900",
+                    }}
+                  >
+                    <Link href='#' color='inherit'>
+                      View Business Profile 
+                    </Link>
+                  </Typography>
+                }
+                action={
+                  <IconButton aria-label='viewMore'>
+                    <ExpandMore/>
+                  </IconButton>
+                }
+              /> 
+            </Card>
+            <Card className={classes.card} >
+              <CardHeader
+                avatar={
+                  <Avatar>
+                    
+                  </Avatar>
+                }
+                title={
+                  <Typography>
+                    Business Name Prop Goes here.
+                  </Typography>
+                }
+                subheader={
+                  <Typography variant='subtitle'
+                    style={{
+                      color: "#FA3900",
+                    }}
+                  >
+                    <Link href='#' color='inherit'>
+                      View Business Profile 
+                    </Link>
+                  </Typography>
+                }
+                action={
+                  <IconButton aria-label='viewMore'>
+                    <ExpandMore/>
+                  </IconButton>
+                }
+              /> 
+            </Card>
+            <Card className={classes.card} >
+              <CardHeader
+                avatar={
+                  <Avatar>
+                    
+                  </Avatar>
+                }
+                title={
+                  <Typography>
+                    Business Name Prop Goes here.
+                  </Typography>
+                }
+                subheader={
+                  <Typography variant='subtitle'
+                    style={{
+                      color: "#FA3900",
+                    }}
+                  >
+                    <Link href='#' color='inherit'>
+                      View Business Profile 
+                    </Link>
+                  </Typography>
+                }
+                action={
+                  <IconButton aria-label='viewMore'>
+                    <ExpandMore/>
+                  </IconButton>
+                }
+              /> 
+            </Card>
           </div>
         </div>
       </ThemeProvider>

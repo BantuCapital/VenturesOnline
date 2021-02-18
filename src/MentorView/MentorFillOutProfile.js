@@ -16,7 +16,11 @@ const theme = createMuiTheme({
 theme.typography.h2={
     fontSize:'2rem',
     fontWeight: '300',
-    fontStyle: 'italic'
+    fontStyle: 'italic',
+    justifyContent: 'center',
+    [theme.breakpoints.down('xs')]:{
+        fontSize:'1.3rem'
+    }
 }
 
 const useStyles = makeStyles((theme)=>({
@@ -86,6 +90,9 @@ const useStyles = makeStyles((theme)=>({
         [theme.breakpoints.up('md')]:{
             marginRight: '9%'
         },
+        [theme.breakpoints.down('xs')]:{
+            height: '79px'
+        }
     }
     
 }));
@@ -123,7 +130,7 @@ function MentorFillOutProfile() {
           <div className={classes.root}>
             <Card className={classes.header}>
                 <CardContent style={{ display:'flex', flexDirection:'row', justifyContent:'center', alignContent:'center'}}>
-                    <Typography variant="h2">
+                    <Typography variant="h2" style={{textAlign: 'center'}}>
                        Tell Us A bit About Yourself
                     </Typography>
                 </CardContent>
@@ -158,7 +165,8 @@ function MentorFillOutProfile() {
                         style={{
                           color: 'white',
                           backgroundColor: "#FA3900",
-                          marginBottom: '20px'
+                          marginBottom: '20px',
+                          textAlign: 'center'
                         }}
                       >
                         Upload Profile Image
@@ -172,7 +180,7 @@ function MentorFillOutProfile() {
                     <div>
                       <VOTextField required id='Name' label='Name' variant='outlined' color='#FA3900' className={classes.textfield}/>
                       <VOTextField required id='Surname' label='Surname' variant='outlined' color='#FA3900' className={classes.textfield}/>
-                      <VOTextField required id='Cell Number' label='Cell Number' variant='outlined' color='#FA3900' className={classes.textfield}/> 
+                      <VOTextField id='Cell Number' label='Cell Number' variant='outlined' color='#FA3900' className={classes.textfield}/> 
                     </div>             
                   </CardContent>
                 </Card>
@@ -188,13 +196,13 @@ function MentorFillOutProfile() {
                     style={{ textAlign: 'center' }}
                   />
                   <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-                    <VOTextField  id='Skills' label='Add a Skill' variant='outlined' style={{padding: '5px', width:'75%'}}/>
+                    <VOTextField  id='Skills' label='Add a Skill(Optional and max 5)' variant='outlined' style={{padding: '5px', width:'75%'}}/>
                     <IconButton>
                       <AddCircle id='AddSkill' fontSize='large' style={{color:'#FA3900',  }}/>
                     </IconButton>
                   </div> 
                   <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-                    <VOTextField  id='Experience' label='Add Experience' variant='outlined' style={{padding: '5px', width:'75%' }}/>
+                    <VOTextField  id='Experience' label='Add Experience(Optional and max 5)' variant='outlined' style={{padding: '5px', width:'75%' }}/>
                     <IconButton>
                       <AddCircle id='AddExperience' fontSize='large' style={{color:'#FA3900',  }}/>
                     </IconButton>

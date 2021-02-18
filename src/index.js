@@ -1,17 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import MentorFillOutProfile from './MentorView/MentorFillOutProfile'
+import 'typeface-raleway';
+import { createMuiTheme } from '@material-ui/core/styles'
+import Ventures from './MentorView/Ventures';
+//import MentorFillOutProfile from './MentorView/MentorFillOutProfile'
 //import MentorProfile from './MentorView/MentorProfile'
 //import MentorLanding from './MentorView/MentorLanding';
 //import ManagerLanding from './ManagerView/ManagerLanding'
 import reportWebVitals from './reportWebVitals';
+import { ThemeProvider } from 'react-bootstrap';
 
-
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: [
+      'Raleway',
+      'sans-serif',
+    ].join(','),
+  },
+});
 
 ReactDOM.render(
   <React.StrictMode>
-      <MentorFillOutProfile />
+    <ThemeProvider theme={theme}>
+      <Ventures/>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

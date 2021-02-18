@@ -1,10 +1,9 @@
 import React from 'react';
 import SideNav from '../SideNav';
-import { Card, CardHeader, CardMedia, CardContent, Grid, Typography, Avatar, Button, Container, TextField, IconButton } from '@material-ui/core'
+import { Card, CardHeader, CardContent, Grid, Typography, Avatar, Button, Container, Box, IconButton, TextField } from '@material-ui/core'
 import { Home, Business, MeetingRoom, LocalLibrary, Group, AddCircle} from '@material-ui/icons';
 import { ThemeProvider, createMuiTheme, makeStyles, withStyles } from "@material-ui/core/styles";
 import BackgroundImage from '../Images/Background2.png';
-import ProfilePic from '../Images/Abe-Cambridge.jpg'
 
 const theme = createMuiTheme({
     typography: {
@@ -72,6 +71,16 @@ const useStyles = makeStyles((theme)=>({
       display: 'flex', 
       flexDirection:'row', 
       justifyContent: 'center'
+    }, 
+
+    details: {
+      padding: '6px',
+      textAlign: 'center'
+    },
+
+    detail: {
+      padding: '20px',
+      
     }
     
 }));
@@ -139,10 +148,10 @@ function MentorProfile() {
           <div className={classes.root}>
             <Grid container spacing={2} >
               <Grid item xs={12} md={5}>
-                <Card className={classes.card} variant="outlined">
+                <Card className={classes.card} variant="outlined" raised='true'>
                   <CardHeader
                     title={
-                      <Typography>
+                      <Typography variant='h5'>
                         My Details
                       </Typography>
                     }
@@ -178,56 +187,94 @@ function MentorProfile() {
                         />
                       </Button>
                     </Container>
-                    <div>
-                      <VOTextField required id='Name' label='Name' variant='outlined' color='#FA3900' className={classes.textfield}/>
-                      <VOTextField required id='Surname' label='Surname' variant='outlined' color='#FA3900' className={classes.textfield}/>
-                      <VOTextField required id='Cell Number' label='Cell Number' variant='outlined' color='#FA3900' className={classes.textfield}/> 
-                    </div>             
+                    <Box className={classes.details}>
+                      <Typography variant='subtitle'>
+                        Name
+                      </Typography>
+                      <Typography variant='h6'>
+                        Tom
+                      </Typography>
+                    </Box>
+                    <Box className={classes.details}>
+                      <Typography variant='subtitle'>
+                        Surname
+                      </Typography>
+                      <Typography variant='h6'>
+                        Larson
+                      </Typography>
+                    </Box> 
+                    <Box className={classes.details}>
+                      <Typography variant='subtitle'>
+                        Cell Number
+                      </Typography>
+                      <Typography variant='h6'>
+                       0738459924
+                      </Typography>
+                    </Box> 
+
                   </CardContent>
                 </Card>
               </Grid>
               <Grid item xs={12} md={6}>
-                <Card className={classes.cardSmall} variant="outlined">
+                <Card className={classes.cardSmall} variant="outlined" raised='true'>
                   <CardHeader
                     title={
-                      <Typography>
+                      <Typography variant='h5'>
                         My Skills And Experience
                       </Typography>
                     }
                     style={{ textAlign: 'center' }}
                   />
-                  <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-                    <VOTextField  id='Skills' label='Add a Skill' variant='outlined' style={{padding: '5px', width:'75%'}}/>
-                    <IconButton>
-                      <AddCircle id='AddSkill' fontSize='large' style={{color:'#FA3900',  }}/>
-                    </IconButton>
-                  </div> 
-                  <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-                    <VOTextField  id='Experience' label='Add Experience' variant='outlined' style={{padding: '5px', width:'75%' }}/>
-                    <IconButton>
-                      <AddCircle id='AddExperience' fontSize='large' style={{color:'#FA3900',  }}/>
-                    </IconButton>
-                  </div>
+                  <Grid container>
+                    <Grid item xs={6} className={classes.detail}>
+                      <Box fontWeight='fontWeightBold' style={{paddingBottom:'5px'}}>
+                        <Typography variant='subtitle'>
+                          Skills
+                        </Typography>
+                      </Box>
+                      <Typography variant='body2'>
+                        Communication
+                      </Typography>
+                      <Typography variant='body2'>
+                        Computer Science
+                      </Typography>
+                      <Typography variant='body2'> 
+                        Marketing
+                      </Typography>
+                    </Grid>
+                    <Grid item xs={6} className={classes.detail}>
+                    <Box fontWeight='fontWeightBold' style={{paddingBottom:'5px'}}>
+                        <Typography variant='subtitle'>
+                          Experience
+                        </Typography>
+                      </Box>
+                      <Typography variant='body2'>
+                        StartUp Grind UCT director
+                      </Typography>
+                      <Typography variant='body2'> 
+                        Small Business owner for the past 3 years
+                      </Typography>
+                      <Typography variant='body2'>
+                        Worked as a consultant at BCG
+                      </Typography>
+                    </Grid>
+                  </Grid>
                 </Card>
                 
-                <Card className={classes.cardSmall} variant="outlined">
+                <Card className={classes.cardSmall} variant="outlined" raised='true'>
                   <CardHeader
                     title={
-                      <Typography>
+                      <Typography variant='h5'>
                         Why Ventures Online
                       </Typography>
                     }
                     style={{ textAlign: 'center' }}
                   />
-                  <VOTextField
-                    id='Motivation'
-                    label='I want to be VO mentor because...'
-                    multiline
-                    rows='7'
-                    variant='outlined'
-                    className={classes.textfield}
-                    style={{margin: '10px'}}
-                  />
+                  <Box className={classes.details}>
+                    <Typography variant='body2' >
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </Typography>
+                  </Box>
                 </Card>
               </Grid>
             </Grid>
