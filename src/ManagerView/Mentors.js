@@ -111,42 +111,6 @@ function Ventures() {
                     </Link>
                   </Typography>
                 }
-                //onclick goes to business profile page as it looks to businesses when pulled up. 
-                action={
-                  <IconButton aria-label='viewMore'>
-                    <ExpandMore/>
-                  </IconButton>
-                }
-                // expanded view shows 2 lists side by side or under each other depending on device screen size
-                // list of recommended and optional sections
-                // if a section is completed it will have a tick next to it, if feedback given will also have a tick
-                // where there is feedback outstanding the business' whole card wll be highlighted orange with the link made white. 
-                // a gap analysis link will be included above the two lists so that a mento can check the gap analysis out if they so choose
-              /> 
-            </Card>
-            <Card className={classes.card} >
-              <CardHeader
-                avatar={
-                  <Avatar>
-                    
-                  </Avatar>
-                }
-                title={
-                  <Typography>
-                    Business Name Prop Goes here.
-                  </Typography>
-                }
-                subheader={
-                  <Typography variant='subtitle'
-                    style={{
-                      color: "#FA3900",
-                    }}
-                  >
-                    <Link href='#' color='inherit'>
-                      View Business Profile 
-                    </Link>
-                  </Typography>
-                }
                 action={
                   <IconButton aria-label='viewMore'>
                     <ExpandMore/>
@@ -183,7 +147,42 @@ function Ventures() {
                   </IconButton>
                 }
               /> 
-            
+            </Card>
+            <Card className={classes.card} >
+              <CardHeader
+                avatar={
+                  <Avatar>
+                    
+                  </Avatar>
+                }
+                title={
+                  <Typography>
+                    Mentor Name
+                  </Typography>
+                }
+                subheader={
+                  <Typography variant='subtitle'
+                    style={{
+                      color: "#FA3900",
+                    }}
+                  >
+                    <Link href='#' color='inherit'>
+                      View Mentor Profile
+                    </Link>
+                  </Typography>
+                }
+                //onclick goes to a page showing the mentor profile which looks eexactly like the mentor profile page in mentor view
+                action={
+                  <IconButton aria-label='viewMore'>
+                    <ExpandMore/>
+                  </IconButton>
+                } 
+                // on expansion can verify a mentor. and assign businesses to it from a drop down menu of business 
+                // can also deverify a mentor, all those businesses become without a mentor and avaliable for assignment if that happens
+                //can also see a list of assigned businesses on drop down
+                //can see total hours spent on platform by mentor and when they were last seen 
+                //can also see total hours spent by mentors businesses on the platform 
+              /> 
             </Card>
           </div>
         </div>

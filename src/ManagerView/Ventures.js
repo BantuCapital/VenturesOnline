@@ -1,7 +1,7 @@
 import React from 'react';
 import SideNav from '../SideNav';
 import { Card, CardHeader, CardMedia, CardContent, Grid, Typography, Avatar, IconButton, Link } from '@material-ui/core'
-import { Home, Business, MeetingRoom, LocalLibrary, Group, ExpandLess, ExpandMore } from '@material-ui/icons';
+import { Home, Business, MeetingRoom, LocalLibrary, Group, ExpandLess, ExpandMore, Event } from '@material-ui/icons';
 import { ThemeProvider, createMuiTheme, makeStyles } from "@material-ui/core/styles";
 import BackgroundImage from '../Images/Background2.png';
 
@@ -51,35 +51,42 @@ const useStyles = makeStyles((theme)=>({
 }));
 
 const MenuItems = [
-  { 
-    name: 'home', 
-    label: 'Home',
-    icon: <Home/>,
-  },
-  {
-    name: 'ventures',
-    label: 'Ventures',
-    icon: <Business/>,
-    
-  },
-  {
-    name: 'meetings',
-    label: 'Meetings',
-    icon: <MeetingRoom/>,
-   
-  },
-  {
-    name: 'learning content',
-    label: 'Learning Content',
-    icon: <LocalLibrary/>,
-    
-  },
-  {
-    name: 'ecosystem centre',
-    label: 'Ecosystem Centre',
-    icon: <Group/>
-  }
-]
+    { 
+      name: 'home', 
+      label: 'Home',
+      icon: <Home/>,
+    },
+    {
+      name: 'ventures',
+      label: 'Ventures',
+      icon: <Business/>,
+      
+    },
+    {
+      name: 'mentors',
+      label: 'Mentors',
+      icon: <Group/>,
+      
+    },
+    {
+      name: 'events',
+      label: 'Events',
+      icon: <Event/>,
+     
+    },
+    {
+      name: 'meetings',
+      label: 'Meetings',
+      icon: <MeetingRoom/>,
+     
+    },
+    {
+      name: 'learning content',
+      label: 'Learning Content',
+      icon: <LocalLibrary/>,
+      
+    },
+  ]
 
 function Ventures() {
     const classes = useStyles();
@@ -111,7 +118,68 @@ function Ventures() {
                     </Link>
                   </Typography>
                 }
-                //onclick goes to business profile page as it looks to businesses when pulled up. 
+                action={
+                  <IconButton aria-label='viewMore'>
+                    <ExpandMore/>
+                  </IconButton>
+                }
+              /> 
+            </Card>
+            <Card className={classes.card} >
+              <CardHeader
+                avatar={
+                  <Avatar>
+                    
+                  </Avatar>
+                }
+                title={
+                  <Typography>
+                    Business Name Prop Goes here.
+                  </Typography>
+                }
+                subheader={
+                  <Typography variant='subtitle'
+                    style={{
+                      color: "#FA3900",
+                    }}
+                  >
+                    <Link href='#' color='inherit'>
+                      View Business Profile 
+                    </Link>
+                  </Typography>
+                }
+                action={
+                  <IconButton aria-label='viewMore'>
+                    <ExpandMore/>
+                  </IconButton>
+                }
+              /> 
+            </Card>
+            <Card className={classes.card} >
+              <CardHeader
+                avatar={
+                  <Avatar>
+                    
+                  </Avatar>
+                }
+                title={
+                  <Typography>
+                    Business Name Prop Goes here.
+                  </Typography>
+                }
+                subheader={
+                  <Typography variant='subtitle'
+                    style={{
+                      color: "#FA3900",
+                    }}
+                  >
+                    <Link href='#' color='inherit'>
+                      View Business Profile 
+                    </Link>
+                  </Typography>
+                }
+                //onclick goes to business profile page as it looks to businesses when pulled up.
+                // profile page also includes link to gap analysis  
                 action={
                   <IconButton aria-label='viewMore'>
                     <ExpandMore/>
@@ -120,70 +188,8 @@ function Ventures() {
                 // expanded view shows 2 lists side by side or under each other depending on device screen size
                 // list of recommended and optional sections
                 // if a section is completed it will have a tick next to it, if feedback given will also have a tick
-                // where there is feedback outstanding the business' whole card wll be highlighted orange with the link made white. 
-                // a gap analysis link will be included above the two lists so that a mento can check the gap analysis out if they so choose
+                // a gap analysis link will be included above the two lists so that a mento can check the gap analysis out if they so choose and above that will be the name of the mentor of this business(name is clickable if you want to chack out mentor profile)
               /> 
-            </Card>
-            <Card className={classes.card} >
-              <CardHeader
-                avatar={
-                  <Avatar>
-                    
-                  </Avatar>
-                }
-                title={
-                  <Typography>
-                    Business Name Prop Goes here.
-                  </Typography>
-                }
-                subheader={
-                  <Typography variant='subtitle'
-                    style={{
-                      color: "#FA3900",
-                    }}
-                  >
-                    <Link href='#' color='inherit'>
-                      View Business Profile 
-                    </Link>
-                  </Typography>
-                }
-                action={
-                  <IconButton aria-label='viewMore'>
-                    <ExpandMore/>
-                  </IconButton>
-                }
-              /> 
-            </Card>
-            <Card className={classes.card} >
-              <CardHeader
-                avatar={
-                  <Avatar>
-                    
-                  </Avatar>
-                }
-                title={
-                  <Typography>
-                    Business Name Prop Goes here.
-                  </Typography>
-                }
-                subheader={
-                  <Typography variant='subtitle'
-                    style={{
-                      color: "#FA3900",
-                    }}
-                  >
-                    <Link href='#' color='inherit'>
-                      View Business Profile 
-                    </Link>
-                  </Typography>
-                }
-                action={
-                  <IconButton aria-label='viewMore'>
-                    <ExpandMore/>
-                  </IconButton>
-                }
-              /> 
-            
             </Card>
           </div>
         </div>

@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import 'typeface-raleway';
 import { createMuiTheme } from '@material-ui/core/styles'
-import Ventures from './MentorView/Ventures';
+import Ventures from "./ManagerView/Ventures";
+//import Ventures from './MentorView/Ventures';
 //import MentorFillOutProfile from './MentorView/MentorFillOutProfile'
 //import MentorProfile from './MentorView/MentorProfile'
 //import MentorLanding from './MentorView/MentorLanding';
@@ -19,6 +20,16 @@ const theme = createMuiTheme({
     ].join(','),
   },
 });
+
+theme.typography.h2={
+  fontSize:'2rem',
+  fontWeight: '300',
+  fontStyle: 'italic',
+  justifyContent: 'center',
+  [theme.breakpoints.down('xs')]:{
+      fontSize:'1.3rem'
+  }
+}
 
 ReactDOM.render(
   <React.StrictMode>
