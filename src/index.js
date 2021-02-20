@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import 'typeface-raleway';
 import { createMuiTheme } from '@material-ui/core/styles'
-import Ventures from "./ManagerView/Ventures";
+import Mentors from './ManagerView/Mentors'
+//import Ventures from "./ManagerView/Ventures";
 //import Ventures from './MentorView/Ventures';
 //import MentorFillOutProfile from './MentorView/MentorFillOutProfile'
 //import MentorProfile from './MentorView/MentorProfile'
@@ -34,7 +35,7 @@ theme.typography.h2={
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <Ventures/>
+      <Mentors/>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')

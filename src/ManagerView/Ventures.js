@@ -1,7 +1,7 @@
 import React from 'react';
 import SideNav from '../SideNav';
-import { Card, CardHeader, CardMedia, CardContent, Grid, Typography, Avatar, IconButton, Link } from '@material-ui/core'
-import { Home, Business, MeetingRoom, LocalLibrary, Group, ExpandLess, ExpandMore, Event } from '@material-ui/icons';
+import { Typography, Avatar, Link, Accordion, AccordionDetails, AccordionSummary, Box } from '@material-ui/core'
+import { Home, Business, MeetingRoom, LocalLibrary, Group, ExpandMore, Event } from '@material-ui/icons';
 import { ThemeProvider, createMuiTheme, makeStyles } from "@material-ui/core/styles";
 import BackgroundImage from '../Images/Background2.png';
 
@@ -23,9 +23,9 @@ const useStyles = makeStyles((theme)=>({
           marginLeft: '250px'
         }
     },
-    card: {
+    accordion: {
       BackgroundColor: 'white',
-      maxHeight: '150px',
+      //maxHeight: '150px',
       width: '100%',
       marginBottom: '10px'
     },
@@ -88,113 +88,82 @@ const MenuItems = [
     },
   ]
 
+  const businessExamples =[
+    {
+      id: 1,
+      name: 'Business Name Prop Goes here',
+      label: 'Business 1'
+    },
+
+    {
+      id: 2,
+      name: 'Business Name Prop Goes here',
+      label: 'Business 2'
+    },
+
+    {
+      id: 3,
+      name: 'Business Name Prop Goes here',
+      label: 'Business 3'
+    },
+  ]
+
 function Ventures() {
     const classes = useStyles();
+    
     return (
       <ThemeProvider theme={theme}>
         <div className={classes.Background}>
           <SideNav items={MenuItems} user="Tom"/>
           <div className={classes.root}>
-            <Card className={classes.card} >
-              <CardHeader
-                avatar={
-                  <Avatar>
-                    
-                  </Avatar>
-                }
-                title={
-                  <Typography>
-                    Business Name Prop Goes here.
-                  </Typography>
-                }
-                subheader={
-                  <Typography variant='subtitle'
-                    style={{
-                      color: "#FA3900",
-                    }}
+            {
+              businessExamples.map((business)=>(
+                <Accordion className = {classes.accordion}>
+                  <AccordionSummary
+                    expandIcon={<ExpandMore/>}
+                    aria-controls='panel1a-content'
+                    id = 'panel1a-header'
                   >
-                    <Link href='#' color='inherit'>
-                      View Business Profile 
-                    </Link>
-                  </Typography>
-                }
-                action={
-                  <IconButton aria-label='viewMore'>
-                    <ExpandMore/>
-                  </IconButton>
-                }
-              /> 
-            </Card>
-            <Card className={classes.card} >
-              <CardHeader
-                avatar={
-                  <Avatar>
-                    
-                  </Avatar>
-                }
-                title={
-                  <Typography>
-                    Business Name Prop Goes here.
-                  </Typography>
-                }
-                subheader={
-                  <Typography variant='subtitle'
-                    style={{
-                      color: "#FA3900",
-                    }}
-                  >
-                    <Link href='#' color='inherit'>
-                      View Business Profile 
-                    </Link>
-                  </Typography>
-                }
-                action={
-                  <IconButton aria-label='viewMore'>
-                    <ExpandMore/>
-                  </IconButton>
-                }
-              /> 
-            </Card>
-            <Card className={classes.card} >
-              <CardHeader
-                avatar={
-                  <Avatar>
-                    
-                  </Avatar>
-                }
-                title={
-                  <Typography>
-                    Business Name Prop Goes here.
-                  </Typography>
-                }
-                subheader={
-                  <Typography variant='subtitle'
-                    style={{
-                      color: "#FA3900",
-                    }}
-                  >
-                    <Link href='#' color='inherit'>
-                      View Business Profile 
-                    </Link>
-                  </Typography>
-                }
-                //onclick goes to business profile page as it looks to businesses when pulled up.
-                // profile page also includes link to gap analysis  
-                action={
-                  <IconButton aria-label='viewMore'>
-                    <ExpandMore/>
-                  </IconButton>
-                }
-                // expanded view shows 2 lists side by side or under each other depending on device screen size
-                // list of recommended and optional sections
-                // if a section is completed it will have a tick next to it, if feedback given will also have a tick
-                // a gap analysis link will be included above the two lists so that a mento can check the gap analysis out if they so choose and above that will be the name of the mentor of this business(name is clickable if you want to chack out mentor profile)
-              /> 
-            </Card>
+                    <Avatar>
+                          
+                    </Avatar>
+                    <Box flexDirection = 'column' style={{marginLeft:'15px'}}>
+                      <Typography>
+                        {business.label}
+                      </Typography>
+                      <Typography variant='subtitle'
+                            style={{
+                              color: "#FA3900",
+                            }}
+                          >
+                          <Link href='#' color='inherit'>
+                            View Business Profile 
+                          </Link>
+                      </Typography>
+                    </Box>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Typography>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+                      sit amet blandit leo lobortis eget.
+                    </Typography>
+                  </AccordionDetails>
+                </Accordion>
+              ))
+            }
+
           </div>
         </div>
       </ThemeProvider>
     );
   }
+
+  //onclick goes to business profile page as it looks to businesses when pulled up.
+                // profile page also includes link to gap analysis  
+
+  // expanded view shows 2 lists side by side or under each other depending on device screen size
+                // list of recommended and optional sections
+                // if a section is completed it will have a tick next to it, if feedback given will also have a tick
+                // a gap analysis link will be included above the two lists so that a mento can check the gap analysis out if they so choose and above that will be the name of the mentor of this business(name is clickable if you want to chack out mentor profile)
   
   export default Ventures;

@@ -1,7 +1,7 @@
 import React from 'react';
 import SideNav from '../SideNav';
-import { Card, CardHeader, CardContent, Grid, Typography, Avatar, Button, Container, Box, IconButton, TextField } from '@material-ui/core'
-import { Home, Business, MeetingRoom, LocalLibrary, Group, AddCircle} from '@material-ui/icons';
+import { Card, CardHeader, CardContent, Grid, Typography, Avatar, Button, Container, Box, TextField } from '@material-ui/core'
+import { Home, Business, MeetingRoom, LocalLibrary, Group } from '@material-ui/icons';
 import { ThemeProvider, createMuiTheme, makeStyles, withStyles } from "@material-ui/core/styles";
 import BackgroundImage from '../Images/Background2.png';
 
