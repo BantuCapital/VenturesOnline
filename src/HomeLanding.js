@@ -3,11 +3,12 @@ import './App.css';
 import classNames from 'classnames';
 import { Link } from "react-router-dom"
 import SideNav from './SideNav';
-import { Home, Business, MeetingRoom, LocalLibrary, Group } from '@material-ui/icons';
+import { Home, Business, Flight,Speed, Group, Chat, FilterHdr, Create, LocalMall, EventNote, Airplay } from '@material-ui/icons';
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import BusinessProfile from './BusinessProfile';
 import FullWidthGrid from './HomeContainers';
+import LearningContent from './LearningContent';
 
 
 const theme = createMuiTheme({
@@ -33,13 +34,13 @@ const MenuItems = [
   {
     name: 'startup',
     label: <Link to="learningcontent">Start up</Link>,
-    icon: <MeetingRoom/>,
+    icon: <Flight/>,
    
   },
   {
     name: 'accelerate',
-    label: 'Accelerate',
-    icon: <LocalLibrary/>,
+    label: <Link to="videos">Accelerate</Link>,
+    icon: <Speed/>,
     
   },
   {
@@ -50,22 +51,22 @@ const MenuItems = [
   {
     name: 'chat',
     label: 'Chat',
-    icon: <Group/>
+    icon: <Chat/>
   },
   {
     name: 'my tasks',
     label: 'My Tasks',
-    icon: <Group/>
+    icon: <FilterHdr/>
   },
   {
     name: 'content centre',
     label:'Content Centre',
-    icon: <Group/>
+    icon: <Create/>
   },
   {
     name: 'service providers',
     label: 'Service Providers',
-    icon: <Group/>
+    icon: <LocalMall/>
   },
   {
     name: 'coaching',
@@ -75,12 +76,12 @@ const MenuItems = [
   {
     name: 'dealflow',
     label: 'DealFlow',
-    icon: <Group/>
+    icon: <Airplay/>
   },
   {
     name: 'events',
     label: 'Events',
-    icon: <Group/>
+    icon: <EventNote/>
   }
 ]
 
@@ -100,6 +101,9 @@ function App() {
                   <BusinessProfile/>
                 </Route>
                 <Route path="/learningcontent">
+                  <LearningContent/>
+                </Route>
+                <Route path="/videos">
                   <LearningContent/>
                 </Route>
               </Switch>

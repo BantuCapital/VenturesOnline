@@ -30,6 +30,11 @@ code {
   
 }
 
+.mainContainer a{
+  text-decoration: none;
+  color: black;
+}
+
 .mainContainer::before{
   content: "";
   background-image: url(./Images/Background.jpg);
@@ -47,4 +52,30 @@ code {
 }
 
 
+/* content previews / list     */
+.content-preview{
+  padding: 10px 16px;
+  margin: 20px 0;
+  border-bottom: 1px solid white;
+}
 
+.content-preview:hover{
+  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+}
+
+.content-preview h2{
+  font-size: 20px;
+  color: black;
+  margin-bottom: 8px;
+}
+
+.content-preview a{
+  text-decoration: none;
+}
+
+
+.root{
+  background-color: blue;
+}
+
+/** Learning content */
