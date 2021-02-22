@@ -1,6 +1,6 @@
 import React from 'react';
 import SideNav from '../SideNav';
-import { Typography, Avatar, Link, Accordion, AccordionDetails, AccordionSummary, Box } from '@material-ui/core'
+import { Typography, Avatar, Link, Accordion, AccordionDetails, AccordionSummary, Box, Grid } from '@material-ui/core'
 import { Home, Business, MeetingRoom, LocalLibrary, Group, ExpandMore, Event } from '@material-ui/icons';
 import { ThemeProvider, createMuiTheme, makeStyles } from "@material-ui/core/styles";
 import BackgroundImage from '../Images/Background2.png';
@@ -109,8 +109,7 @@ const MenuItems = [
   ]
 
 function Ventures() {
-    const classes = useStyles();
-    
+    const classes = useStyles();   
     return (
       <ThemeProvider theme={theme}>
         <div className={classes.Background}>
@@ -143,10 +142,40 @@ function Ventures() {
                     </Box>
                   </AccordionSummary>
                   <AccordionDetails>
-                    <Typography>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                      sit amet blandit leo lobortis eget.
-                    </Typography>
+                    <Grid container>
+                      <Grid item xs={12} md={6} style={{padding:6}}>
+                        <Typography>
+                          Recommended Sections
+                        </Typography>
+                        <Box display='flex' flexDirection='column'>
+                          <Typography variant='subtitle'>
+                            Recommended
+                          </Typography>
+                          <Typography variant='subtitle'>
+                            Recommended
+                          </Typography>
+                          <Typography variant='subtitle'>
+                            Recommended
+                          </Typography>
+                        </Box>
+                      </Grid>
+                      <Grid item xs={12} md={6} style={{padding:6}}>
+                        <Typography>
+                          Optional Sections
+                        </Typography>
+                        <Box display='flex' flexDirection='column'>
+                          <Typography variant='subtitle'>
+                            Optional
+                          </Typography>
+                          <Typography variant='subtitle'>
+                            Optional
+                          </Typography>
+                          <Typography variant='subtitle'>
+                            Optional
+                          </Typography>
+                        </Box>
+                      </Grid>
+                    </Grid>
                   </AccordionDetails>
                 </Accordion>
               ))

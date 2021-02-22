@@ -1,7 +1,7 @@
 import React from 'react';
 import SideNav from '../SideNav';
-import { AccordionDetails, Accordion, AccordionSummary, Typography, Avatar, Box, Link } from '@material-ui/core'
-import { Home, Business, MeetingRoom, LocalLibrary, Group, ExpandLess, ExpandMore, Event } from '@material-ui/icons';
+import { AccordionDetails, Accordion, AccordionSummary, Typography, Avatar, Box, Link, Grid, IconButton } from '@material-ui/core'
+import { Home, Business, MeetingRoom, LocalLibrary, Group, ExpandMore, Event, AddCircle } from '@material-ui/icons';
 import { ThemeProvider, createMuiTheme, makeStyles } from "@material-ui/core/styles";
 import BackgroundImage from '../Images/Background2.png';
 
@@ -142,10 +142,40 @@ function Ventures() {
                     </Box>
                   </AccordionSummary>
                   <AccordionDetails>
-                    <Typography>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                      sit amet blandit leo lobortis eget.
-                    </Typography>
+                    <Grid container>
+                      <Grid item xs={12} md={6}>
+                        <Box display='flex' flexDirection='column'>
+                          <Typography style={{paddingBottom:4}}>
+                            Verified
+                          </Typography>
+                          <Typography>
+                            Businesses Assigned to Mentor
+                          </Typography>
+                          <Typography variant='subtitle'>
+                            Business Name
+                          </Typography>
+                          <Typography variant='subtitle'>
+                            Business Name
+                          </Typography>
+                          <Typography variant='subtitle'>
+                            Business Name
+                          </Typography>
+                          <Typography variant='subtitle'>
+                            Business Name
+                          </Typography>
+                        </Box>
+                      </Grid>
+                      <Grid item xs={12} md={6}>
+                        <Box display='flex' flexDirection='row' alignItems='center'>
+                            <Typography>
+                              Assign a Business
+                            </Typography>
+                            <IconButton style={{color:"#FA3900"}}>
+                              <AddCircle/>
+                            </IconButton>
+                        </Box>
+                      </Grid>
+                    </Grid>
                   </AccordionDetails>
                 </Accordion>
               ))

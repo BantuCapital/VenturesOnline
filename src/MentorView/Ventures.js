@@ -1,6 +1,6 @@
 import React from 'react';
 import SideNav from '../SideNav';
-import { AccordionSummary, Accordion, AccordionDetails, Typography, Avatar, Box, Link } from '@material-ui/core'
+import { AccordionSummary, Accordion, AccordionDetails, Typography, Avatar, Box, Link, Grid } from '@material-ui/core'
 import { Home, Business, MeetingRoom, LocalLibrary, Group, ExpandMore } from '@material-ui/icons';
 import { ThemeProvider, createMuiTheme, makeStyles } from "@material-ui/core/styles";
 import BackgroundImage from '../Images/Background2.png';
@@ -135,10 +135,40 @@ function Ventures() {
                     </Box>
                   </AccordionSummary>
                   <AccordionDetails>
-                    <Typography>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                      sit amet blandit leo lobortis eget.
-                    </Typography>
+                      <Grid container>
+                        <Grid item xs={12} md={6} style={{padding:6}}>
+                          <Typography>
+                            Recommended Sections
+                          </Typography>
+                          <Box display='flex' flexDirection='column'>
+                            <Typography variant='subtitle'>
+                              Recommended
+                            </Typography>
+                            <Typography variant='subtitle'>
+                              Recommended
+                            </Typography>
+                            <Typography variant='subtitle'>
+                              Recommended
+                            </Typography>
+                          </Box>
+                        </Grid>
+                        <Grid item xs={12} md={6} style={{padding:6}}>
+                          <Typography>
+                            Optional Sections
+                          </Typography>
+                          <Box display='flex' flexDirection='column'>
+                            <Typography variant='subtitle'>
+                              Optional
+                            </Typography>
+                            <Typography variant='subtitle'>
+                              Optional
+                            </Typography>
+                            <Typography variant='subtitle'>
+                              Optional
+                            </Typography>
+                          </Box>
+                        </Grid>
+                      </Grid>
                   </AccordionDetails>
                 </Accordion>
               ))

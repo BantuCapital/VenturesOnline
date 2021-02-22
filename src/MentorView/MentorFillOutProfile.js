@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme)=>({
     },
 
     cardSmall:{
-      height: '39vh',
+      height: '35vh',
       marginBottom: "12px",
       backgroundColor: 'white'
     },
@@ -222,12 +222,24 @@ function MentorFillOutProfile() {
                     id='Motivation'
                     label='I want to be VO mentor because...'
                     multiline
-                    rows='7'
+                    rows='6'
+                    rowsMax='7'
                     variant='outlined'
                     className={classes.textfield}
                     style={{margin: '10px'}}
                   />
                 </Card>
+                <Button 
+                  variant="contained"
+                  style={{
+                    width:'100%', 
+                    color: 'white',
+                    backgroundColor: "#FA3900",
+                    alignSelf: 'center'
+                  }} 
+                >
+                  Submit
+                </Button>
               </Grid>
             </Grid>
           </div>

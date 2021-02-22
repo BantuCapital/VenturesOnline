@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import 'typeface-raleway';
 import { createMuiTheme } from '@material-ui/core/styles'
-import Mentors from './ManagerView/Mentors'
+//import Mentors from './ManagerView/Mentors'
 //import Ventures from "./ManagerView/Ventures";
 //import Ventures from './MentorView/Ventures';
 //import MentorFillOutProfile from './MentorView/MentorFillOutProfile'
 //import MentorProfile from './MentorView/MentorProfile'
 //import MentorLanding from './MentorView/MentorLanding';
-//import ManagerLanding from './ManagerView/ManagerLanding'
+//import ManagerLanding from './ManagerView/ManagerLanding';
+import EcosystemProfile from './ManagerView/EcosystemProfile';
+//import ManagerFillOutProfile from './ManagerView/ManagerFillOutProfile';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from 'react-bootstrap';
 
@@ -35,7 +37,7 @@ theme.typography.h2={
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <Mentors/>
+      <EcosystemProfile/>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
