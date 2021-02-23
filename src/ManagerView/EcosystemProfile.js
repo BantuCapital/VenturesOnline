@@ -1,6 +1,6 @@
 import React from 'react';
 import SideNav from '../SideNav';
-import { Card, CardHeader, CardContent, Grid, Typography, Avatar, Button, Container, Box, TextField, CardMedia } from '@material-ui/core'
+import { Card, CardHeader, Grid, Typography, Avatar, Button, Container, Box, TextField, CardMedia } from '@material-ui/core'
 import { Home, Business, MeetingRoom, LocalLibrary, Group, Event } from '@material-ui/icons';
 import { ThemeProvider, createMuiTheme, makeStyles, withStyles } from "@material-ui/core/styles";
 import BackgroundImage from '../Images/Background2.png';
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme)=>({
         }
     },
     card: {
-      height: '80vh',
+      minHeight: '80vh',
       display: 'flex',
       flexDirection:'column',
       backgroundColor: 'white',
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme)=>({
     },
 
     cardSmall:{
-      height: '39vh',
+      minHeight: '39vh',
       marginBottom: "12px",
       backgroundColor: 'white'
     },
@@ -85,7 +85,7 @@ const useStyles = makeStyles((theme)=>({
     },
 
     media: {
-        height: '300px',
+        height: '250px',
     }
     
 }));
@@ -228,7 +228,8 @@ function EcosystemProfile() {
                                             style={{
                                             color: 'white',
                                             backgroundColor: "#FA3900",
-                                            marginBottom: '20px'
+                                            marginBottom: '20px',
+                                            
                                             }}
                                         >
                                             Upload Profile Image
@@ -241,7 +242,7 @@ function EcosystemProfile() {
                                     </Container>
                                 </Box>
                                 <Box>
-                                    <Box className={classes.details} >
+                                    <Box className={classes.details}  >
                                         <Typography variant='body2' style={{fontWeight: 'bold' }}>
                                             Name:&nbsp;
                                         </Typography>
@@ -257,16 +258,16 @@ function EcosystemProfile() {
                                             Mngoma 
                                         </Typography>
                                     </Box>
-                                    <Box className={classes.details} >
+                                    <Box className={classes.details}>
                                         <Typography variant='body2' style={{fontWeight: 'bold' }}>
                                             Email:&nbsp;
                                         </Typography>
-                                        <Typography variant='body2' >
+                                        <Typography variant='body2' style={{wordWrap: 'break-word', maxWidth:'100%' }} >
                                             Nonjabulo@gmail.com
                                         </Typography>
                                     </Box>
                                     <Box className={classes.details} >
-                                        <Typography variant='body2' style={{fontWeight: 'bold' }}>
+                                        <Typography variant='body2' style={{fontWeight: 'bold'}}>
                                             Cell Number:&nbsp;
                                         </Typography>
                                         <Typography variant='body2' >
