@@ -210,14 +210,12 @@ function SideNav(props) {
               <Box pl={3} >
                 { item.icon }
               </Box>
-              <Box mx='auto' width = '10'>
-                
+              <Box mx='auto' width = '10'>                
                   <ListItemText> 
                     <Typography > 
                       {item.label} 
                     </Typography>
-                  </ListItemText>
-                
+                  </ListItemText>                
               </Box>  
             </MenuItems>
           </LinkRouter>

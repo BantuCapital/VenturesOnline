@@ -7,6 +7,7 @@ import LandingComponent from './LandingComponent';
 import Mentors from './Mentors'
 import Ventures from './Ventures'
 import EcosystemProfile from './EcosystemProfile'
+import Events from './Events'
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 
 const theme = createMuiTheme({
@@ -112,6 +113,7 @@ function ManagerLanding() {
             <Route path='/ManagerVentures' component={Ventures}/>
             <Route path='/Mentors' component={Mentors}/>
             <Route path='/EcosystemProfile' component={EcosystemProfile}/>
+            <Route path='/Events' component={Events}/>
           </Switch>
         </div>
       </ThemeProvider>
