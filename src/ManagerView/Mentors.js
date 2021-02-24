@@ -1,18 +1,9 @@
 import React from 'react';
-import SideNav from '../SideNav';
 import { AccordionDetails, Accordion, AccordionSummary, Typography, Avatar, Box, Link, Grid, IconButton } from '@material-ui/core'
-import { Home, Business, MeetingRoom, LocalLibrary, Group, ExpandMore, Event, AddCircle } from '@material-ui/icons';
-import { ThemeProvider, createMuiTheme, makeStyles } from "@material-ui/core/styles";
-import BackgroundImage from '../Images/Background2.png';
+import {  ExpandMore, AddCircle } from '@material-ui/icons';
+import {  makeStyles } from "@material-ui/core/styles";
 
-const theme = createMuiTheme({
-    typography: {
-      fontFamily: [
-        'Raleway',
-        'sans-serif',
-      ].join(','),
-    },
-});
+
 
 const useStyles = makeStyles((theme)=>({
     root: {
@@ -29,64 +20,8 @@ const useStyles = makeStyles((theme)=>({
       width: '100%',
       marginBottom: '10px'
     },
-
-    Background: {
-      backgroundImage: `url(${BackgroundImage})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'bottom',
-      backgroundRepeat: 'repeat',
-      backgroundAttachment: 'fixed',
-      [theme.breakpoints.up('sm')]:{
-        height: '100vh',  
-      },
-      [theme.breakpoints.down('xs')]:{
-        height: '100%',
-      }
-    },
-
-    media: {
-      height: '300px',
-    }
     
 }));
-
-const MenuItems = [
-    { 
-      name: 'home', 
-      label: 'Home',
-      icon: <Home/>,
-    },
-    {
-      name: 'ventures',
-      label: 'Ventures',
-      icon: <Business/>,
-      
-    },
-    {
-      name: 'mentors',
-      label: 'Mentors',
-      icon: <Group/>,
-      
-    },
-    {
-      name: 'events',
-      label: 'Events',
-      icon: <Event/>,
-     
-    },
-    {
-      name: 'meetings',
-      label: 'Meetings',
-      icon: <MeetingRoom/>,
-     
-    },
-    {
-      name: 'learning content',
-      label: 'Learning Content',
-      icon: <LocalLibrary/>,
-      
-    },
-  ]
 
   const mentorExamples =[
     {
@@ -111,10 +46,7 @@ const MenuItems = [
 function Ventures() {
     const classes = useStyles();
     return (
-      <ThemeProvider theme={theme}>
-        <div className={classes.Background}>
-          <SideNav items={MenuItems} user="Tom"/>
-          <div className={classes.root}>
+      <div className={classes.root}>
           {
               mentorExamples.map((mentor)=>(
                 <Accordion className = {classes.accordion}>
@@ -181,8 +113,6 @@ function Ventures() {
               ))
             }
           </div>
-        </div>
-      </ThemeProvider>
     );
   }
 

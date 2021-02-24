@@ -6,12 +6,20 @@ import BackgroundImage from '../Images/Background2.png';
 import Logo from '../Images/Logo.png'
 
 const theme = createMuiTheme({
-    typography: {
-      fontFamily: [
-        'Raleway',
-        'sans-serif',
-      ].join(','),
+  palette:{
+    primary: {
+        main: '#FA3900'
     },
+    secondary: {
+        main: 'rgb(255,255,255,0)'
+    }
+  },
+  typography: {
+    fontFamily: [
+     'Raleway',
+      'sans-serif',
+    ].join(','),
+  },
 });
 
 theme.typography.h2={
@@ -33,6 +41,8 @@ const useStyles = makeStyles((theme)=>({
       backgroundColor: 'white',
       margin:'10px',
       width:'320px',
+      border:'1px solid',
+      borderColor:'#FA3900',
       [theme.breakpoints.down('xs')]:{
         width:'99%'
       }
@@ -149,6 +159,7 @@ function Signup() {
                 <FormControl style={{width:'100%', paddingBottom: '6px'}}>
                   <InputLabel htmlFor='standard-adornment-password'>Password</InputLabel>
                   <Input
+                    color='primary'
                     required
                     fullWidth
                     style={{ width:'100%', color:'FA3900'}}                   
@@ -172,6 +183,7 @@ function Signup() {
                 <FormControl style={{width:'100%', paddingBottom: '6px'}}>
                   <InputLabel htmlFor='standard-adornment-password'>Re-enter Password</InputLabel>
                   <Input
+                    color='primary'
                     required
                     fullWidth
                     style={{ width:'100%', color:'FA3900'}}                   

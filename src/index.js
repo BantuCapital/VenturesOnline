@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import 'typeface-raleway';
 import { createMuiTheme } from '@material-ui/core/styles'
-import Signin from './Shared/Signin'
+//import Signin from './Shared/Signin'
 //import Signup from './Shared/Signup'
 //import Mentors from './ManagerView/Mentors'
 //import Ventures from "./ManagerView/Ventures";
@@ -16,6 +16,7 @@ import Signin from './Shared/Signin'
 //import ManagerFillOutProfile from './ManagerView/ManagerFillOutProfile';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from 'react-bootstrap';
+import ManagerLanding from './ManagerView/ManagerLanding';
 
 const theme = createMuiTheme({
   typography: {
@@ -39,7 +40,7 @@ theme.typography.h2={
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <Signin/>
+      <ManagerLanding/>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')

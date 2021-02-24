@@ -6,12 +6,21 @@ import BackgroundImage from '../Images/Background2.png';
 import Logo from '../Images/Logo.png'
 
 const theme = createMuiTheme({
-    typography: {
-      fontFamily: [
-        'Raleway',
-        'sans-serif',
-      ].join(','),
+  palette:{
+    primary: {
+        main: '#FA3900'
     },
+    secondary: {
+        main: 'rgb(255,255,255,0)'
+    }
+  },
+  typography: {
+    fontFamily: [
+      'Raleway',
+      'sans-serif',
+    ].join(','),
+  },
+  
 });
 
 theme.typography.h2={
@@ -27,12 +36,14 @@ theme.typography.h2={
 const useStyles = makeStyles((theme)=>({
 
     card: {
-      minHeight: '80vh',
+      minHeight: '60vh',
       display: 'flex',
       flexDirection:'column',
       backgroundColor: 'white',
       margin:'10px',
       width:'320px',
+      border:'1px solid',
+      borderColor:'#FA3900',
       [theme.breakpoints.down('xs')]:{
         width:'99%'
       }
@@ -118,21 +129,22 @@ function Signin() {
           <Box display='flex' flexDirection='row' className={classes.logo}>
             <img src={Logo} alt="Ventures Online" className={classes.mobileLogo}/>
           </Box>
-          <Box display='flex' flexDirection='row' style={{justifyContent:'center'}}>
+          <Box display='flex' flexDirection='row' style={{justifyContent:'center', paddingBottom:'100px'}}>
             <Card className={classes.card} variant='outlined'>
               <CardHeader
                 title={
                   <Typography variant='h5'>
-                    Sign In
+                    Welcome back to Ventures Online
                   </Typography>
                   }
                   style={{ textAlign: 'center' }}
               />
-              <CardContent style={{marginTop:'20px'}}>               
+              <CardContent style={{marginTop:'20px',}}>               
                 <VOTextField required id='email' label='Email' fullWidth style={{paddingBottom: '6px'}}/>
                 <FormControl style={{width:'100%', paddingBottom: '6px'}}>
                   <InputLabel htmlFor='standard-adornment-password'>Password</InputLabel>
                   <Input
+                    color='primary'
                     required
                     fullWidth
                     style={{ width:'100%', color:'FA3900'}}                   
@@ -154,7 +166,7 @@ function Signin() {
                   />
                 </FormControl>                          
                 <Box display='flex' flexDirection='row' style={{justifyContent:'center', marginBottom:'8px'}}>
-                  <Button variant='contained' style={{backgroundColor:'#FA3900', color: 'white', width:'60%', marginTop:'80px'}}>
+                  <Button variant='contained' style={{backgroundColor:'#FA3900', color: 'white', width:'60%', marginTop:'40px'}}>
                     Sign In
                   </Button>
                 </Box>

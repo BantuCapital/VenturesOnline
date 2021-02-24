@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link as RouterLink } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -10,7 +11,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme, withStyles } from '@material-ui/core/styles';
-import { Card, CardMedia, Box, Avatar, Button, useMediaQuery, ClickAwayListener, Popper,MenuList, MenuItem, Paper, useScrollTrigger } from '@material-ui/core';
+import { Card, CardMedia, Box, Avatar, Button, useMediaQuery, ClickAwayListener, Popper,MenuList, MenuItem, Paper, useScrollTrigger, Link } from '@material-ui/core';
 import Logo from './Images/Logo.png';
 import Abe from './Images/Abe-Cambridge.jpg';
 import BackgroundImage from './Images/Background2.png';
@@ -158,7 +159,7 @@ const Buttons = withStyles({
   }
 })(Button);
 
-
+const LinkRouter = (props) => <Link {...props} component={RouterLink}/>
 
 function SideNav(props) {
   const { window } = props;
@@ -204,14 +205,22 @@ function SideNav(props) {
       </Card>
       <MenuList>
         {props.items.map((item) => (
-          <MenuItems key={item.name} >
-            <Box pl={3} >
-              { item.icon }
-            </Box>
-            <Box mx='auto' width = '10'>
-              <ListItemText> <Typography> {item.label} </Typography></ListItemText>
-            </Box>  
-          </MenuItems>
+          <LinkRouter to={item.route} color='inherit'underline='none'>
+            <MenuItems key={item.name} >
+              <Box pl={3} >
+                { item.icon }
+              </Box>
+              <Box mx='auto' width = '10'>
+                
+                  <ListItemText> 
+                    <Typography > 
+                      {item.label} 
+                    </Typography>
+                  </ListItemText>
+                
+              </Box>  
+            </MenuItems>
+          </LinkRouter>
         ))}
       </MenuList>
     </div>
