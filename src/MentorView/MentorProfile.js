@@ -1,18 +1,7 @@
 import React from 'react';
-import SideNav from '../SideNav';
-import { Card, CardHeader, CardContent, Grid, Typography, Avatar, Button, Container, Box, TextField } from '@material-ui/core'
-import { Home, Business, MeetingRoom, LocalLibrary, Group } from '@material-ui/icons';
-import { ThemeProvider, createMuiTheme, makeStyles, withStyles } from "@material-ui/core/styles";
+import { Card, CardHeader, CardContent, Grid, Typography, Avatar, Button, Container, Box } from '@material-ui/core'
+import { makeStyles } from "@material-ui/core/styles";
 import BackgroundImage from '../Images/Background2.png';
-
-const theme = createMuiTheme({
-    typography: {
-      fontFamily: [
-        'Raleway',
-        'sans-serif',
-      ].join(','),
-    },
-});
 
 const useStyles = makeStyles((theme)=>({
     root: {
@@ -24,7 +13,7 @@ const useStyles = makeStyles((theme)=>({
         }
     },
     card: {
-      height: '80vh',
+      minHeight: '80vh',
       display: 'flex',
       flexDirection:'column',
       backgroundColor: 'white',
@@ -32,7 +21,7 @@ const useStyles = makeStyles((theme)=>({
     },
 
     cardSmall:{
-      height: '39vh',
+      minHeight: '39vh',
       marginBottom: "12px",
       backgroundColor: 'white'
     },
@@ -85,67 +74,10 @@ const useStyles = makeStyles((theme)=>({
     
 }));
 
-const VOTextField = withStyles({
-  root: {
-    '& label.Mui-focused': {
-      color: '#FA3900',
-    },
-    '& .MuiInput-underline:after': {
-      borderBottomColor: '#FA3900',
-    },
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        borderColor: 'black',
-      },
-      '&:hover fieldset': {
-        borderColor: '#FA3900',
-      },
-      '&.Mui-focused fieldset': {
-        borderColor: '#FA3900',
-      },
-    },
-  },
-      
-})(TextField);
-
-const MenuItems = [
-  { 
-    name: 'home', 
-    label: 'Home',
-    icon: <Home/>,
-  },
-  {
-    name: 'ventures',
-    label: 'Ventures',
-    icon: <Business/>,
-    
-  },
-  {
-    name: 'meetings',
-    label: 'Meetings',
-    icon: <MeetingRoom/>,
-   
-  },
-  {
-    name: 'learning content',
-    label: 'Learning Content',
-    icon: <LocalLibrary/>,
-    
-  },
-  {
-    name: 'ecosystem centre',
-    label: 'Ecosystem Centre',
-    icon: <Group/>
-  }
-]
-
 function MentorProfile() {
     const classes = useStyles();
     return (
-      <ThemeProvider theme={theme}>
-        <div className={classes.Background}>
-          <SideNav items={MenuItems} user="Tom"/>
-          <div className={classes.root}>
+      <div className={classes.root}>
             <Grid container spacing={2} >
               <Grid item xs={12} md={5}>
                 <Card className={classes.card} variant="outlined" raised='true'>
@@ -188,26 +120,34 @@ function MentorProfile() {
                       </Button>
                     </Container>
                     <Box className={classes.details}>
-                      <Typography variant='subtitle'>
+                      <Typography variant='body2' style={{fontWeight: 'bold' }}>
                         Name
                       </Typography>
-                      <Typography variant='h6'>
+                      <Typography variant='body2'>
                         Tom
                       </Typography>
                     </Box>
                     <Box className={classes.details}>
-                      <Typography variant='subtitle'>
+                      <Typography variant='body2' style={{fontWeight: 'bold' }}>
                         Surname
                       </Typography>
-                      <Typography variant='h6'>
+                      <Typography variant='body2'>
                         Larson
                       </Typography>
-                    </Box> 
+                    </Box>
                     <Box className={classes.details}>
-                      <Typography variant='subtitle'>
+                      <Typography variant='body2' style={{fontWeight: 'bold' }}>
+                        Email
+                      </Typography>
+                      <Typography variant='body2'>
+                        clive@ventures.co.za
+                      </Typography>
+                    </Box>  
+                    <Box className={classes.details}>
+                      <Typography variant='body2' style={{fontWeight: 'bold' }}>
                         Cell Number
                       </Typography>
-                      <Typography variant='h6'>
+                      <Typography variant='body2'>
                        0738459924
                       </Typography>
                     </Box> 
@@ -279,8 +219,6 @@ function MentorProfile() {
               </Grid>
             </Grid>
           </div>
-        </div>
-      </ThemeProvider>
     );
   }
   

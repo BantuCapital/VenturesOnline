@@ -246,7 +246,9 @@ function SideNav(props) {
                 <Box className={classes.nameProfilebox} >
                     <Typography style={{color: "black"}}> Hi {props.user} </Typography>
                     <Box display='flex'>
-                        <Buttons className={classes.clickable} size="small" >Profile</Buttons>
+                        <LinkRouter to={props.profile} color='inherit' underline='none'>
+                          <Buttons className={classes.clickable} size="small" >Profile</Buttons>
+                        </LinkRouter>
                         <Typography style={{fontSize: "12px", paddingTop:"4px", color:"black"}}>|</Typography>
                         <Buttons className={classes.clickable} size="small">Sign Out</Buttons>
                     </Box>
@@ -280,7 +282,9 @@ function SideNav(props) {
                                 <Paper>
                                    <ClickAwayListener onClickAway={handleClickAway}>
                                         <MenuList>
-                                            <MenuItems onClick={handleClickAway}>Profile</MenuItems>
+                                            <LinkRouter to={props.profile} color='inherit' underline='none'>
+                                              <MenuItems onClick={handleClickAway}>Profile</MenuItems>
+                                            </LinkRouter>
                                             <MenuItems onClick={handleClickAway}>Sign Out</MenuItems>
                                         </MenuList>
                                     </ClickAwayListener>

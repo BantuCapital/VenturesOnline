@@ -117,14 +117,14 @@ function Events() {
                   />
                   <CardContent>
                     <Box >
-                        <VOTextField  id='Skills' label='Event Title' variant='outlined' style={{padding: '5px', width:'100%'}} size='small'/>
-                        <VOTextField  id='Skills' label='Location' variant='outlined' style={{padding: '5px', width:'100%'}} size='small'/>
+                        <VOTextField  id='Skills' label='Event Title' variant='outlined' style={{padding: '5px', paddingTop: '0px', width:'100%'}} size='small'/>
+                        <VOTextField  id='Skills' label='Location' variant='outlined' style={{padding: '5px', paddingTop: '9px', width:'100%'}} size='small'/>
                         <Grid container>
                             <Grid item xs={12} sm={6}>
-                                <VOTextField  id='Skills' label='Date' variant='outlined' style={{padding: '5px', width:'100%'}} size='small'/>
+                                <VOTextField  id='Skills' label='Date' variant='outlined' style={{padding: '5px', paddingTop: '9px', width:'100%'}} size='small'/>
                             </Grid>
                             <Grid item xs={12} sm={6}>
-                                <VOTextField  id='Skills' label='Time' variant='outlined' style={{padding: '5px', width:'100%'}} size='small'/>
+                                <VOTextField  id='Skills' label='Time' variant='outlined' style={{padding: '5px', paddingTop: '9px', width:'100%'}} size='small'/>
                             </Grid>
                         </Grid>
                     </Box>

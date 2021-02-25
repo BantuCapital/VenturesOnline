@@ -1,13 +1,12 @@
 import React from 'react';
 import SideNav from '../SideNav';
-//import ContentWrapper from './ContentWrapper'
-import { Card, CardHeader, CardMedia, CardContent, Grid, Typography, Avatar } from '@material-ui/core'
-import { Home, Business, MeetingRoom, LocalLibrary, Group, EventOutlined, StarBorderOutlined, BusinessOutlined } from '@material-ui/icons';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Home, Business, MeetingRoom, LocalLibrary, Group } from '@material-ui/icons';
 import { ThemeProvider, createMuiTheme, makeStyles } from "@material-ui/core/styles";
 import BackgroundImage from '../Images/Background2.png';
-import Events from '../Images/Event.jpg';
-import Meeting from '../Images/Meeting.jpg';
-import Businesses from '../Images/Businesses.jpg';
+import LandingComponent from './LandingComponent';
+import Ventures from './Ventures'
+import MentorProfile from './MentorProfile';
 
 const theme = createMuiTheme({
     typography: {
@@ -56,125 +55,51 @@ const MenuItems = [
     name: 'home', 
     label: 'Home',
     icon: <Home/>,
+    route:'/'
   },
   {
     name: 'ventures',
     label: 'Ventures',
     icon: <Business/>,
-    
+    route:'/Ventures'
   },
   {
     name: 'meetings',
     label: 'Meetings',
     icon: <MeetingRoom/>,
-   
+    route:''
   },
   {
     name: 'learning content',
     label: 'Learning Content',
     icon: <LocalLibrary/>,
-    
+    route:''
   },
   {
     name: 'ecosystem centre',
     label: 'Ecosystem Centre',
-    icon: <Group/>
+    icon: <Group/>,
+    route:''
   }
 ]
+
+const MenProfile = '/MentorProfile'
 
 function MentorLanding() {
     const classes = useStyles();
     return (
-      <ThemeProvider theme={theme}>
-        <div className={classes.Background}>
-          <SideNav items={MenuItems} user="Tom"/>
-          <div className={classes.root}>
-            <Grid container spacing={2} >
-              <Grid item xs={12} md={4}>
-                <Card className={classes.card}>
-                  <CardHeader
-                    avatar={
-                      <Avatar style={{backgroundColor:"#FA3900" }}> 
-                        <StarBorderOutlined/>
-                      </Avatar>
-                    }
-                    title={
-                      <Typography>
-                        Upcoming Events
-                      </Typography>
-                    }
-                  />
-                  <CardMedia
-                    className={classes.media}
-                    image={Events}
-                    title="Upcoming Events"
-                  /> 
-                  <CardContent>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                      This impressive paella is a perfect party dish and a fun meal to cook together with your
-                      guests. Add 1 cup of frozen peas along with the mussels, if you like.
-                    </Typography>
-                  </CardContent>             
-                </Card>
-              </Grid>
-              <Grid item xs={12} md={4}>
-                <Card className={classes.card}>
-                  <CardHeader
-                    avatar={
-                      <Avatar style={{backgroundColor:"#FA3900" }}> 
-                        <EventOutlined/>
-                      </Avatar>
-                    }
-                    title={
-                      <Typography>
-                        Upcoming Meetings
-                      </Typography>
-                    }
-                  />
-                  <CardMedia
-                    className={classes.media}
-                    image={Meeting}
-                    title="Upcoming Meetings"
-                  /> 
-                  <CardContent>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                      This impressive paella is a perfect party dish and a fun meal to cook together with your
-                      guests. Add 1 cup of frozen peas along with the mussels, if you like.
-                    </Typography>
-                  </CardContent>             
-                </Card>
-              </Grid>
-              <Grid item xs={12} md={4}>
-                <Card className={classes.card}>
-                  <CardHeader
-                    avatar={
-                      <Avatar style={{backgroundColor:"#FA3900" }}> 
-                        <BusinessOutlined/>
-                      </Avatar>
-                    }
-                    title={
-                      <Typography>
-                        Your Mentee Businesses
-                      </Typography>
-                    }
-                  />
-                  <CardMedia
-                    className={classes.media}
-                    image={Businesses}
-                    title='Your Mentee Businesses'
-                  /> 
-                  <CardContent>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                      You're mentoring 5 Businesses,
-                      Last seen business is...
-                    </Typography>
-                  </CardContent>             
-                </Card>
-              </Grid>
-            </Grid>
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <div className={classes.Background}>
+            <SideNav items={MenuItems} profile= {MenProfile} user="Tom"/>
+            <Switch>
+              <Route exact path='/' component={LandingComponent}/>
+              <Route path='/Ventures' component={Ventures}/>
+              <Route path='/MentorProfile' component={MentorProfile}/>
+            </Switch>
           </div>
-        </div>
-      </ThemeProvider>
+        </ThemeProvider>
+      </BrowserRouter>
     );
   }
   

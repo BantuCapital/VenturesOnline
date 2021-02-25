@@ -1,18 +1,8 @@
 import React from 'react';
-import SideNav from '../SideNav';
 import { AccordionSummary, Accordion, AccordionDetails, Typography, Avatar, Box, Link, Grid } from '@material-ui/core'
-import { Home, Business, MeetingRoom, LocalLibrary, Group, ExpandMore } from '@material-ui/icons';
-import { ThemeProvider, createMuiTheme, makeStyles } from "@material-ui/core/styles";
+import { ExpandMore } from '@material-ui/icons';
+import { makeStyles } from "@material-ui/core/styles";
 import BackgroundImage from '../Images/Background2.png';
-
-const theme = createMuiTheme({
-    typography: {
-      fontFamily: [
-        'Raleway',
-        'sans-serif',
-      ].join(','),
-    },
-});
 
 const useStyles = makeStyles((theme)=>({
     root: {
@@ -50,37 +40,6 @@ const useStyles = makeStyles((theme)=>({
     
 }));
 
-const MenuItems = [
-  { 
-    name: 'home', 
-    label: 'Home',
-    icon: <Home/>,
-  },
-  {
-    name: 'ventures',
-    label: 'Ventures',
-    icon: <Business/>,
-    
-  },
-  {
-    name: 'meetings',
-    label: 'Meetings',
-    icon: <MeetingRoom/>,
-   
-  },
-  {
-    name: 'learning content',
-    label: 'Learning Content',
-    icon: <LocalLibrary/>,
-    
-  },
-  {
-    name: 'ecosystem centre',
-    label: 'Ecosystem Centre',
-    icon: <Group/>
-  }
-]
-
 const businessExamples =[
   {
     id: 1,
@@ -104,10 +63,7 @@ const businessExamples =[
 function Ventures() {
     const classes = useStyles();
     return (
-      <ThemeProvider theme={theme}>
-        <div className={classes.Background}>
-          <SideNav items={MenuItems} user="Tom"/>
-          <div className={classes.root}>
+      <div className={classes.root}>
           {
               businessExamples.map((business)=>(
                 <Accordion className = {classes.accordion}>
@@ -175,8 +131,6 @@ function Ventures() {
             }
 
           </div>
-        </div>
-      </ThemeProvider>
     );
   }
   //onclick goes to business profile page as it looks to businesses when pulled up.

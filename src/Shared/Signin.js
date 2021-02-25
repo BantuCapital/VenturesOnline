@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import { Card, CardHeader, CardContent, Typography, Button, TextField, Box, FormControl, InputLabel, Input, InputAdornment, IconButton, Link } from '@material-ui/core'
 import { Visibility, VisibilityOff} from '@material-ui/icons';
 import { ThemeProvider, createMuiTheme, makeStyles, withStyles } from "@material-ui/core/styles";
 import BackgroundImage from '../Images/Background2.png';
-import Logo from '../Images/Logo.png'
+import Logo from '../Images/Logo.png' 
 
 const theme = createMuiTheme({
   palette:{
@@ -102,6 +103,7 @@ const VOTextField = withStyles({
       
 })(TextField);
 
+const LinkRouter = (props)=> <Link {...props} component={RouterLink}/>
 
 function Signin() {
     const classes = useStyles();
@@ -180,9 +182,9 @@ function Signin() {
                       color: "#FA3900",
                     }}
                     >
-                      <Link href='#' color='inherit'>
+                      <LinkRouter to='/' color='inherit'>
                         Sign Up Here
-                      </Link>
+                      </LinkRouter>
                     </Typography>
                 </Box>
                 <Box display='flex' flexDirection='row' style={{justifyContent:'center'}}>
@@ -192,9 +194,9 @@ function Signin() {
                       color: "#FA3900",
                     }}
                     >
-                      <Link href='#' color='inherit'>
+                      <LinkRouter to='#' color='inherit'>
                         Forgot Password?
-                      </Link>
+                      </LinkRouter>
                     </Typography>
                 </Box>
               </CardContent>
