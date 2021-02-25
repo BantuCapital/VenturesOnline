@@ -36,20 +36,20 @@ const LearningVideos = () => {
                     className='react-player'
                     url='https://www.youtube.com/watch?v=ysz5S6PUM-U'
                     width='50%'
-                    height='100%'
+                    height='300px'
                     marginTop='50px'
                     />
-                    <h6 style={{ marginTop:0 }}>Business Fundermentals    6 of 15</h6>
+                    <h3 style={{ marginTop:10,marginLeft:-100 }}>Comment</h3>
                 </div>
-                <div style={{ marginTop:0,marginLeft:500 }}>
+                <div style={{ marginTop:-300,marginLeft:550 }}>
                     <ReactPlayer
                     className='react-player'
                     url='https://www.youtube.com/watch?v=ysz5S6PUM-U'
-                    width='30%'
+                    width='80%'
                     height='100%'
                     marginTop='50px'
                     />
-                    <h6 style={{ marginTop:-2 }}>Business Fundermentals    6 of 15</h6>
+                    <h2 style={{ marginTop:-2 }}>Business </h2>
                 </div>
             </Paper>
             </Grid>
