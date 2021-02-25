@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import { Link } from "react-router-dom";
+import { Button } from "@material-ui/core";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -30,16 +30,15 @@ const LearningContent = () => {
             <Paper className={classes.paper} >
               <h3>Start Up</h3>
                 <div className="content-preview">
-                    <Link to="/">
-                      <h2>Week 1: Introduction</h2>
-                      <button>hello</button>
-                    </Link>
-                    <Link to="/">
-                      <h2>Week 2: Concept</h2>
-                    </Link>
-                    <Link to="/">
-                      <h2>Week 3: Introduction</h2>
-                    </Link>
+                    <Button style={{border:'2px solid black',width:800,height:100,marginBottom:20,textAlign:-800}} variant="outlined" color="primary" href="videos">
+                     Week 1 : Introduction
+                    </Button> <br/>
+                    <Button style={{border:'2px solid black',width:800,height:100,marginBottom:20}} variant="outlined" color="primary" href="#outlined-buttons">
+                     Week 2 : Concepts
+                    </Button> <br/>
+                    <Button style={{border:'2px solid black',width:800,height:100,marginBottom:20}} variant="outlined" color="primary" href="#outlined-buttons">
+                     Week 3 : Introduction
+                    </Button>
                 </div>
             </Paper>
           </Grid> 

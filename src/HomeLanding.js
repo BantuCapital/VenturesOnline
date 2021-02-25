@@ -9,6 +9,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import BusinessProfile from './BusinessProfile';
 import FullWidthGrid from './HomeContainers';
 import LearningContent from './LearningContent';
+import LearningVideos from './LearningVideos';
 
 
 const theme = createMuiTheme({
@@ -39,7 +40,7 @@ const MenuItems = [
   },
   {
     name: 'accelerate',
-    label: <Link to="videos">Accelerate</Link>,
+    label: <Link to="weeklycontent">Accelerate</Link>,
     icon: <Speed/>,
     
   },
@@ -103,9 +104,12 @@ function App() {
                 <Route path="/learningcontent">
                   <LearningContent/>
                 </Route>
-                <Route path="/videos">
+                <Route path="/weeklycontent">
                   <LearningContent/>
                 </Route>
+                <Router path="/videos">
+                  <LearningVideos/>
+                </Router>
               </Switch>
           </div>
         </div>

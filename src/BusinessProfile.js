@@ -60,8 +60,12 @@ const BusinessProfile = () => {
                       <h3>Company Structure</h3> <h4 style={{marginLeft:-180}}>Enterprenuers</h4>
                       <p>cchhfdhbdfkbjdkdjdjjsdjsdhhd dhshhsiureuifbiuuieu bvbjbdbkvfbkjdfbkbkfdkbfkbfdbkkbvjk hchbfhdhdh <br/> sdvhddhdhd cjhcjdjxZ sdkvvdkdh jhjdhfdkhkfhhfdkf</p>  
                       <Avatar style={{marginLeft:20, width:80,height:80,marginBottom:50}} src={Abe} className={classes.profileAvatar}/>
-                      
-                      <Avatar style={{marginLeft:20, width:80,height:80}} src={Abe} className={classes.profileAvatar}/>
+                      <p style={{marginLeft:-220,marginTop:-40}}>Jane</p>
+                      <p style={{marginTop:-100,marginRight:-50}}>kskjjk dksdjkbbjksd jhdkjdsjhd <br/> vdsvjjjjjdvsd cjhsdhdsjvjdsvhjdvsdh <br/> hjbcdsc sjsdksdj dsjhcbkjabkja</p>
+                      <Avatar style={{marginLeft:20,marginTop:60, width:80,height:80}} src={Abe} className={classes.profileAvatar}/>
+                      <p style={{marginLeft:-220}}>Jane</p>
+                      <p style={{marginTop:-100,marginRight:-50}}>kskjjk dksdjkbbjksd jhdkjdsjhd <br/> vdsvjjjjjdvsd cjhsdhdsjvjdsvhjdvsdh <br/> hjbcdsc sjsdksdj dsjhcbkjabkja</p>
+                  
                     </Paper>
                 </Grid>
             </Grid>

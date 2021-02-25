@@ -6,6 +6,7 @@ import Grid from "@material-ui/core/Grid";
 import ReactPlayer from "react-player";
 import Avatar from '@material-ui/core/Avatar';
 import Abe from './Images/Abe-Cambridge.jpg';
+import { Badge } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -61,21 +62,50 @@ export default function FullWidthGrid() {
             <p style={{ marginTop:-40 }}>Notifications</p>
             <div className="avatars" >
               <Avatar style={{marginBottom:10}} src={Abe} className={classes.profileAvatar}/>
+              <p style={{marginTop:-50,marginLeft:22}}>The quick broom</p>
+              <p style={{fontSize:12,marginTop:-20}}>The quick broom</p>
               <Avatar style={{marginBottom:10}} src={Abe} className={classes.profileAvatar}/>
+              <p style={{marginTop:-50,marginLeft:22}}>The quick broom</p>
+              <p style={{fontSize:12,marginTop:-20}}>The quick broom</p>
               <Avatar src={Abe} className={classes.profileAvatar}/>
+              <p style={{marginTop:-40,marginLeft:22}}>The quick broom</p>
+              <p style={{fontSize:12,marginTop:-20}}>The quick broom</p>
               
             </div>
           </Paper>
         </Grid>
         <Grid item xs={12} sm={12} style={{marginTop:10}}>
-          <Paper className={classes.paper}>
+          <Paper className={classes.paper} style={{display:'flow-root'}}>
             <p style={{ marginTop:-40, marginLeft:-800 }}>Ventures Board</p> 
             <Avatar style={{marginBottom:10}} src={Abe} className={classes.profileAvatar}/>
+            <p style={{marginTop:-50,marginLeft:-680}}>The quick broom</p>
+            <p style={{fontSize:12,marginTop:-20,marginLeft:-680}}>The quick broom</p>
             <Avatar style={{marginBottom:10}} src={Abe} className={classes.profileAvatar}/>
+            <p style={{marginTop:-50,marginLeft:-680}}>The quick broom</p>
+            <p style={{fontSize:12,marginTop:-20,marginLeft:-680}}>The quick broom</p>
             <Avatar src={Abe} className={classes.profileAvatar}/>
-              <Avatar style={{marginBottom:10}} src={Abe} className={classes.profileAvatar}/>
-              <Avatar style={{marginBottom:10}} src={Abe} className={classes.profileAvatar}/>
-              <Avatar src={Abe} className={classes.profileAvatar}/>
+            <p style={{marginTop:-50,marginLeft:-680}}>The quick broom</p>
+            <p style={{fontSize:12,marginTop:-20,marginLeft:-680}}>The quick broom</p>
+              <Avatar style={{marginBottom:10,marginTop:-140,marginLeft:250}} src={Abe} className={classes.profileAvatar}/>
+              <p style={{marginTop:-50,marginLeft:-180}}>The quick broom</p>
+              <p style={{fontSize:12,marginTop:-20,marginLeft:-180}}>The quick broom</p>
+              <Avatar style={{marginBottom:10,marginLeft:250}} src={Abe} className={classes.profileAvatar}/>
+              <p style={{marginTop:-50,marginLeft:-180}}>The quick broom</p>
+              <p style={{fontSize:12,marginTop:-20,marginLeft:-180}}>The quick broom</p>
+              <Avatar style={{marginBottom:10,marginTop:12,marginLeft:250}} src={Abe} className={classes.profileAvatar}/>
+              <p style={{marginTop:-50,marginLeft:-180}}>The quick broom</p>
+              <p style={{fontSize:12,marginTop:-20,marginLeft:-180}}>The quick broom</p>
+                <Avatar style={{marginBottom:10,marginTop:-150,marginLeft:450}} src={Abe} className={classes.profileAvatar}/>
+                <p style={{marginTop:-50,marginLeft:220}}>The quick broom</p>
+                <p style={{fontSize:12,marginTop:-20,marginLeft:220}}>The quick broom</p>
+                <Avatar style={{marginBottom:10,marginLeft:450}} src={Abe} className={classes.profileAvatar}/>
+                <p style={{marginTop:-50,marginLeft:220}}>The quick broom</p>
+                <p style={{fontSize:12,marginTop:-20,marginLeft:220}}>The quick broom</p>
+                <Avatar style={{marginBottom:10,marginTop:12,marginLeft:450}} src={Abe} className={classes.profileAvatar}/>
+                <p style={{marginTop:-50,marginLeft:220}}>The quick broom</p>
+                <p style={{fontSize:12,marginTop:-20,marginLeft:220}}>The quick broom</p>
+                <Badge color="secondary" variant="dot">
+                </Badge>
           </Paper>
         </Grid>
       </Grid>
