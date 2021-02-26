@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
     },
     paper: {
       height:500,
+      opacity:0.9,
       width:950,
       marginLeft:40,
       marginTop:120,

@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
     },
     paper: {
       height:500,
+      opacity:0.9,
       width:950,
       marginLeft:40,
       fontSize:17,
@@ -39,9 +40,10 @@ const LearningVideos = () => {
                     height='300px'
                     marginTop='50px'
                     />
-                    <h3 style={{ marginTop:10,marginLeft:-100 }}>Comment</h3>
+                    <h3 style={{ marginTop:10,marginLeft:-400 }}>Comment</h3>
+                    <p style={{marginLeft:-550}}> ahvjhbvkjf sddhhbdskjv sdvjsddbkjss <br/> ahvjhbvkjf sddhhbdskjv sdvjsddbkjss <br/>ahvjhbvkjf sddhhbdskjv sdvjsddbkjss </p>
                 </div>
-                <div style={{ marginTop:-300,marginLeft:550 }}>
+                <div style={{ marginTop:-440,marginLeft:550 }}>
                     <ReactPlayer
                     className='react-player'
                     url='https://www.youtube.com/watch?v=ysz5S6PUM-U'
@@ -51,6 +53,17 @@ const LearningVideos = () => {
                     />
                     <h2 style={{ marginTop:-2 }}>Business </h2>
                 </div>
+                <div style={{ marginTop:-0,marginLeft:550 }}>
+                    <ReactPlayer
+                    className='react-player'
+                    url='https://www.youtube.com/watch?v=ysz5S6PUM-U'
+                    width='80%'
+                    height='100%'
+                    marginTop='50px'
+                    />
+                    <h2 style={{ marginTop:-2 }}>Business </h2>
+                </div>
+                
             </Paper>
             </Grid>
         </Grid>
